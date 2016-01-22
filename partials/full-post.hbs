@@ -10,7 +10,7 @@
       <div class="recent-post-notifaction"><p><em>Most recent entry</em></p></div>
     {{/is}}
     <h2 class="title"><a href="{{url}}" title="{{title}}">{{title}}</a></h2>
-    <p class="subtitle">by <span class="author">{{author}}</span> on <time datetime="{{date format='YYYY-MM-DD'}}">{{date format="MMMM, DD YYYY"}}</time></p>
+    <p class="subtitle">by <a href="{{@blog.url}}/authors"><span class="author">{{author.name}}</span></a> on <time datetime="{{date format='YYYY-MM-DD'}}">{{date format="MMMM, DD YYYY"}}</time></p>
   </header>
 
   {{! post content }}

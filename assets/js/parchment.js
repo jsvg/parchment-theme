@@ -2,8 +2,8 @@ $(document).ready(function() {
   $(".animsition").animsition({
     inClass: 'fade-in',
     outClass: 'fade-out',
-    inDuration: 150,
-    outDuration: 150,
+    inDuration: 250,
+    outDuration: 250,
     linkElement: 'a', // e.g. linkElement: 'a:not([target="_blank"]):not([href^=#])'
     loading: false, // true shows loading animation/class
     loadingParentElement: 'body', //animsition wrapper element

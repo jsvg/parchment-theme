@@ -110,7 +110,7 @@ main {
   text-align: center;
   .copyright-text { font-weight: bold; }
   .designedby-text { font-weight: normal; }
-  .jsv { color: $accent-color; }
+  .jsv { }
   .social-buttons {
     font-size: rem(18);
     padding-top: em(3);
@@ -124,7 +124,8 @@ main {
   }
   @media (max-width: $breakpoint) {
     border-top: 1px solid darken($light-gray, 5%);
-    background: lighten($light-gray, 5%);
+    background: $light-gray;
+    * { background: $light-gray; }
     padding: em(10) 0;
   }
 }
@@ -161,15 +162,17 @@ main {
         max-width: 25%;
       }
     }
-
     .title {
       @extend %heading-font-family;
       margin-bottom: 0;
+      @media (max-width: $breakpoint) {
+        line-height: 1.15 * $base-spacing;
+      }
     }
     .subtitle {
       @extend %base-font-family;
       margin: 0;
-      .author>a { color: $blue; }
+      .author { color: $blue; }
     }
   }
   .post-info {
