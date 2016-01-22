@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  {{! page meta }}
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>{{meta_title}}</title>
+  <meta name="description" content="{{meta_description}}">
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="shortcut icon" href="{{asset "favicon.ico"}}">
+
+  {{! js & css }}
+  <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="{{asset "css/style.css"}}">
+  {{ghost_head}}
+  
+
+</head>
+
+<body class="{{body_class}}">
+
+  <div id="container" class="animsition">
+    {{!> "menu"}}
+    {{{body}}}
+    <footer id="site-footer">
+      <div class="copyright-text">© <time datetime="{{date format='YYYY-MM-DD'}}">{{date format="YYYY"}}</time> {{@blog.title}}</div>
+      <div class="designedby-text">Designed by <span class="jsv">Julian van Giessen</span></div>
+      <div class="social-buttons">
+        <a href='#' class='twitter fa fa-facebook' title='facebook'></a>
+        <a href='#' class='facebook fa fa-twitter' title='twitter'></a>
+        <a href="{{@blog.url}}/rss/" class="rss fa fa-rss" title="rss"></a>
+      </div>
+    </footer>
+  </div>
+  
+  {{ghost_foot}}
+
+  {{! da real js }}
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  <script type="text/javascript" src="{{asset "js/lib/animsition.min.js"}}"></script>
+  <script type="text/javascript" src="{{asset "js/parchment.js"}}"></script>
+
+</body>
+</html>

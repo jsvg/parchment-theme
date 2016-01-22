@@ -1,0 +1,64 @@
+{{!< default}}
+<section id="post">
+  {{#post}}
+    {{> full-post}}
+
+    <footer class="post-info">
+      {{#author}}
+      <section class="author-container">
+        {{!--<figure class="avatar">
+          <a href="{{url}}"><img src="{{image}}" alt="{{name}}" /></a>
+        </figure>--}}
+        <div class="the-author">The Author</div>
+        <div class="name">
+          <h4><a href="{{@blog.url}}/authors">{{name}}</a></h4>
+        </div>
+        <div class="about">
+          <p>{{bio}}</p>
+        </div>
+        {{!--<div class="location">
+          <i class="fa fa-map-pin"></i> {{location}}
+        </div>--}}
+      </section>
+      {{/author}}
+
+      <section class="post-nav">
+        {{#next_post}}
+          <a class="next" href="{{url}}" data-animsition-out-class="fade-out-left">
+            <section class="details">
+              <h6>Next Post <i class="fa fa-arrow-right"></i></h6>
+              <h2 class="title">{{title}}</h2>
+              <p class="time"><time datetime="{{date format='YYYY-MM-DD'}}">{{date format="MMMM, DD YYYY"}}</time></p>
+            </section>
+          </a>
+        {{else}}
+          <a class="next" href="{{@blog.url}}/">
+            <section class="details">
+              <h6>No newer entries <i class="fa fa-chevron-circle-up"></i></h6>
+              <h2 class="title">Back to Home</h2>
+              <p></p>
+            </section>
+          </a>
+        {{/next_post}}
+        {{#prev_post}}
+          <a class="prev" href="{{url}}" data-animsition-out-class="fade-out-right">
+            <section class="details">
+              <h6><i class="fa fa-arrow-left"></i> Previous Post</h6>
+              <h2 class="title">{{title}}</h2>
+              <p class="post-nav-excerpt"><time datetime="{{date format='YYYY-MM-DD'}}">{{date format="MMMM, DD YYYY"}}</time></p>
+            </section>
+          </a>
+        {{else}}
+          <a class="prev" href="{{@blog.url}}/">
+            <section class="details">
+              <h6><i class="fa fa-chevron-circle-up"></i> No older entries</h6>
+              <h2 class="title">Back to Home</h2>
+              <p></p>
+            </section>
+          </a>
+        {{/prev_post}}
+      </section>
+    </footer>
+
+  {{/post}}
+</section>

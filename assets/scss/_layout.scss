@@ -1,0 +1,248 @@
+/************************
+Contents
+
+// elements
+body{}          Everythin
+main{}          Contains all narrative-like content
+#container      Holds all content in default.hbs (all DOM objs. here)
+#site-header    Site details and nav bar; rendered @ all but post.hbs; calls navigation partial
+#site-footer    Copyright, designed by, social media links; rendered everywhere
+#menu           Styles for the menu, rendered @ post
+
+// pages
+#index          Contains post header, calls full-post and header partials
+#post           No header, just article; calls full-post
+#log-book       Special style for listing blog posts
+
+Note: page-*.hbs are rendered into the #index styles
+
+Credits:
+texture: http://tympanus.net/Development/CreativeLinkEffects/
+css link fx: subtlepatterns.com
+************************/
+* {
+  background: #ECEEEF url('../fonts/paper1.png');
+}
+
+body {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+main {
+  margin: 0 em(10);
+}
+
+#container {
+  color: $dark-gray;
+  font-family: $base-font-family;
+  font-style: normal;
+  font-weight: normal;
+  height: 100%;
+  margin: 0 auto;
+  max-width: $max-width; 
+}
+
+#site-header {
+  margin: em(50) 0 em(50);
+  text-align: center;
+  width: 100%;
+  @media (max-width: $breakpoint) {
+    margin: em(20) 0 em(40);
+  }
+  .logo {
+    max-width: rem(220);
+    @media (max-width: $breakpoint) {
+      max-width: rem(100);
+    }
+  }
+  .title {
+    font-size: 5 * $base-font-size;
+    a { color: black; }
+    @media (max-width: $breakpoint) {
+      margin-bottom: 0;
+      font-size: 2.5 * $base-font-size;
+    }
+  }
+  .description {
+    //@extend %base-font-family;
+    font-family: 'Typewriter';
+    @media (max-width: $breakpoint) {
+      font-size: 1.5 * $base-font-size;
+      margin: em(7) 0;
+      padding-bottom: em(13);
+    }
+  }
+  .navigation {
+    @extend %heading-font-family;
+    border-bottom: $base-border;
+    font-size: 1.2 * $base-font-size;
+    padding-bottom: em(6);
+    text-transform: uppercase;
+    li {
+      display: inline-block;
+      padding: em(50) em(20) 0 em(20);
+    }
+    @media (max-width: $breakpoint) {
+      background: rgba(204, 204, 204, 0.1);
+      border-bottom: 1px solid $light-gray;
+      border-top: 1px solid $light-gray;
+      font-size: 1.1 * $base-font-size;
+      font-variant: small-caps;
+      padding-bottom: 0;
+      li {
+        display: block;
+        padding-bottom: em(10);
+        padding-top: em(12);
+        &:not(:first-child) { border-top: 1px solid $light-gray; }
+      }
+    }
+  }
+}
+
+#site-footer {
+  @include clearfix;
+  font-family: $heading-font-family;
+  font-size: em(15);
+  line-height: 1.7 * $base-spacing;
+  padding: em(30) 0 em(60);
+  text-align: center;
+  .copyright-text { font-weight: bold; }
+  .designedby-text { font-weight: normal; }
+  .jsv { color: $accent-color; }
+  .social-buttons {
+    font-size: rem(18);
+    padding-top: em(3);
+    .facebook { color: #3c5a98; }
+    .twitter { color: #3ea9dd; }
+    .rss { color: orangered; }
+    a {
+      color: $accent-color;
+      padding: 0 em(3);
+    }
+  }
+  @media (max-width: $breakpoint) {
+    border-top: 1px solid darken($light-gray, 5%);
+    background: lighten($light-gray, 5%);
+    padding: em(10) 0;
+  }
+}
+
+#menu {
+
+}
+
+
+#index {
+  .post-header {
+    .recent-post-notifaction {
+      @extend %heading-font-family;
+      color: $blue;
+      float: right;
+    }
+    @media (max-width: $breakpoint) {
+      .title,
+      .recent-post-notifaction {
+        float: none;
+        text-align: center;
+      }
+    }
+  }
+}
+
+#post {
+  .post-header {
+    margin: em(20) 0 em(40);
+    text-align: center;
+    .logo {
+      max-width: 15%;
+      @media (max-width: $breakpoint) {
+        max-width: 25%;
+      }
+    }
+
+    .title {
+      @extend %heading-font-family;
+      margin-bottom: 0;
+    }
+    .subtitle {
+      @extend %base-font-family;
+      margin: 0;
+      .author>a { color: $blue; }
+    }
+  }
+  .post-info {
+    margin: 0 em(10);
+    .author-container {
+      border-bottom: 1px solid $medium-gray;
+      border-top: 1px solid $medium-gray;
+      margin: 2em 0;
+      padding: 1.5em 0;
+      .avatar {
+        float: left;
+        width: em(100);
+      }
+      .the-author {
+        font-family: 'PT Sans';
+        font-weight: 400;
+        color: $blue;
+        padding-bottom: em(5);
+      }
+      .name { @extend %heading-font-family; }
+      .location {
+        @extend %heading-font-family;
+      }
+      .about {
+        @extend %heading-font-family;
+        font-weight: normal;
+      }
+      @media (max-width: $breakpoint) {
+        padding: 1em 0;
+        .avatar { display: none; }
+        .name,
+        .the-author,
+        .location {
+          @include clearfix;
+          text-align: center;
+        }
+      }
+    }
+  }
+  .post-nav {
+    .next,
+    .prev {
+      display: block;
+      width: 50%;
+    }
+    .next {
+      float: right;
+      .details { text-align: right; }
+    }
+    .prev {
+      float: left;
+      .details { text-align: left; }
+    }
+    .logo {
+      width: 10%;
+    }
+  }
+}
+
+#log-book {
+  .total {
+    @include clearfix;
+    color: $blue;
+    font-size: em(14);
+    margin: -1.5em 0;
+    text-align: center;
+    width: 100%;
+  }
+  .list-post {
+    margin: 2em 0;
+  }
+  ul:not(:last-child) {
+    border-bottom: 1px solid $light-gray;
+  }
+}
+

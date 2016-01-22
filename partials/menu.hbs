@@ -1,0 +1,27 @@
+<nav class="main-nav">
+  <i class="fa fa-bars js-bg-check js-main-menu-open right"></i>
+</nav>
+
+{{!--
+<div class="nav-wrapper">
+  <p class="nav-label">Menu</p>
+  <ul>
+    <li class="{{@blog.url}}/log-book/{{#if current}} active{{/if}}" role="presentation"><a href="{{url absolute="true"}}">Log Book</a></li>
+    <li class="{{@blog.url}}/authors/{{#if current}} active{{/if}}" role="presentation"><a href="{{url absolute="true"}}">Authors</a></li>
+    <li class="{{@blog.url}}/eltrip-who/{{#if current}} active{{/if}}" role="presentation"><a href="{{url absolute="true"}}">Who is Eltrip?</a></li>
+    <li class="nav-rss"><a href="{{@blog.url}}/rss/"><i class="ic ic-rss"></i> Subscribe</a></li>
+  </ul>
+</div>
+--}}
+
+<div class="main-menu-ovrl main-menu-ovrl-hugeinc js-main-menu-ovrl">
+  <i class="fa fa-times main-menu-ovrl-close js-main-menu-close"></i>
+  <nav>
+    <ul>
+      <li><a href="{{url absolute="true"}}">{{label}}</a></li>
+      <li><a href="{{url absolute="true"}}">Log Book</a></li>
+      <li><a href="{{url absolute="true"}}">Authors</a></li>
+      <li><a href="{{url absolute="true"}}">Who is Eltrip?</a></li>
+    </ul>
+  </nav>
+</div>

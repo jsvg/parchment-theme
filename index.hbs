@@ -1,0 +1,14 @@
+{{!< default}}
+<div id="index">
+
+  {{> "header"}}
+
+  <main>
+    {{#foreach posts}}
+      {{#if @first}}
+        {{> "full-post"}}
+      {{/if}}
+    {{/foreach}}
+  </main>
+
+</div>

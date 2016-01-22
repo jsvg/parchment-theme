@@ -1,0 +1,18 @@
+<article>   
+  {{! post heading }}
+  <header class="post-header">
+    {{#is 'post'}}
+      <a href="{{@blog.url}}/" data-animsition-out-class="fade-out-down-sm" data-animsition-out-duration="400">
+        <img class="logo" src="{{@blog.logo}}" alt="Eltrip Logo"/>
+      </a>
+    {{/is}}
+    {{#is 'index'}}
+      <div class="recent-post-notifaction"><p><em>Most recent entry</em></p></div>
+    {{/is}}
+    <h2 class="title"><a href="{{url}}" title="{{title}}">{{title}}</a></h2>
+    <p class="subtitle">by <span class="author">{{author}}</span> on <time datetime="{{date format='YYYY-MM-DD'}}">{{date format="MMMM, DD YYYY"}}</time></p>
+  </header>
+
+  {{! post content }}
+  <main class="markdown-formatting clearfix">{{content}}</main>
+</article>

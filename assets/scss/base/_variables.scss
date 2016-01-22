@@ -1,0 +1,69 @@
+// Typography
+@import '../fonts';
+$heading-font-family: 'PT Sans', $sans-serif;
+$base-font-family: 'Museo Slab', $serif;
+
+%heading-font-family {
+  color: #333;
+  font-family: 'PT Sans', $sans-serif;
+  font-weight: 700;
+}
+
+%base-font-family {
+  color: darken(#888, 15%);
+  font-family: 'Museo Slab', $serif;
+  font-weight: normal;    
+}
+
+// Font Sizes
+$base-font-size: em(15);
+
+// Line height
+$base-line-height: 1;
+$paragraph-line-height: 1.5;
+$heading-line-height: 1;
+
+// Other Sizes
+$base-border-radius: 2px;
+$base-spacing: $base-line-height * 1em;
+$small-spacing: $base-spacing / 2;
+$base-z-index: 0;
+
+// Colors
+$blue: orangered; // really, this is the "base-color"
+$accent-color: darken($blue, 20%);
+$dark-gray: #333;
+$medium-gray: #999;
+$light-gray: #ccc;
+
+// Font Colors
+$base-font-color: #000;
+$action-color: $blue;
+
+// Border
+$base-border-color: $dark-gray;
+$base-border: 1px solid $base-border-color;
+
+// Background Colors
+$base-background-color: #FFFEFD;
+$secondary-background-color: tint($base-border-color, 75%);
+
+// Forms
+$form-box-shadow: inset 0 1px 3px rgba(#000, 0.06);
+$form-box-shadow-focus: $form-box-shadow, 0 0 5px adjust-color($action-color, $lightness: -5%, $alpha: -0.3);
+
+// Animations
+$base-duration: 150ms;
+$base-timing: ease;
+
+// Clearfix
+.clearfix,
+header,
+article,
+footer {
+  @include clearfix;
+}
+
+// Screen delimiters
+$breakpoint: em(600);
+$max-width: em(760);

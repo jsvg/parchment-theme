@@ -1,0 +1,17 @@
+{{!< default}}
+
+<header>
+    <a href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="Eltrip Logo" /></a>
+    <h1>{{@blog.title}}</h1>
+    <h2>{{@blog.description}}</h2>
+</header>
+
+<main>
+    <div>
+        <span>
+            All posts tagged in: {{tag.name}}
+        </span>
+    </div>
+
+    {{> "loop"}}
+</main>

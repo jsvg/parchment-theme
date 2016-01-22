@@ -1,0 +1,25 @@
+{{!< default}}
+
+{{#author}}
+<header>
+    {{! author picture }}
+    {{#if image}}
+        <img src="{{image}}" alt="{{name}}">
+    {{/if}}
+    <h1>{{name}}</h1>
+
+    {{! author bio }}
+    {{#if bio}}
+        <h2>{{bio}}</h2>
+    {{/if}}
+
+    {{! author post count}}
+    <span>
+        {{plural ../pagination.total empty='No posts' singular='% post' plural='% posts'}} <a href="{{url}}rss/"><i class="fa fa-rss"></i></a>
+    </span>
+</header>
+
+<main>
+    {{> "loop"}}
+</main>
+{{/author}}
