@@ -66,7 +66,6 @@ main {
     }
   }
   .description {
-    //@extend %base-font-family;
     font-family: 'Typewriter';
     @media (max-width: $breakpoint) {
       font-size: 1.5 * $base-font-size;
@@ -131,7 +130,7 @@ main {
 }
 
 #menu {
-
+  // no menu for now
 }
 
 
@@ -147,6 +146,22 @@ main {
       .recent-post-notifaction {
         float: none;
         text-align: center;
+      }
+    }
+  }
+  .excerpt {
+    .read-more {
+      font-weight: bold;
+      @include transition(150ms);
+      &:hover { color: $blue; }
+    }
+    .list-stories-link {
+      text-align: center;
+      a>p {
+        @extend %heading-font-family;
+        @include transition(150ms);
+        font-size: em(25);
+        &:hover { color: $blue; }
       }
     }
   }

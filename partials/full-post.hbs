@@ -14,5 +14,17 @@
   </header>
 
   {{! post content }}
-  <main class="markdown-formatting clearfix">{{content}}</main>
+  <main class="markdown-formatting clearfix">
+    {{#is "index"}}
+      <div class="excerpt">
+        <b>Excerpt: </b>{{excerpt words="250"}}
+        <a href="{{url}}">&hellip; <span class="read-more">(read more)</span></a>
+        <div class="list-stories-link">
+          <a href="{{@blog.url}}/log-book"><p>See all stories</p></a>
+        </div>
+      </div>
+    {{else}}
+      {{content}}
+    {{/is}}
+  </main>
 </article>

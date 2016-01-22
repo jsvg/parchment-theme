@@ -2306,7 +2306,7 @@ th {
   src: url("../fonts/Corona 3 Typewriter.ttf") format("truetype");
 }
 
-#site-header .navigation, #index .post-header .recent-post-notifaction, #post .post-header .title, #post .post-info .author-container .name, #post .post-info .author-container .location, #post .post-info .author-container .about {
+#site-header .navigation, #index .post-header .recent-post-notifaction, #index .excerpt .list-stories-link a > p, #post .post-header .title, #post .post-info .author-container .name, #post .post-info .author-container .location, #post .post-info .author-container .about {
   color: #333;
   font-family: "PT Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 700;
@@ -3049,6 +3049,32 @@ main {
     float: none;
     text-align: center;
   }
+}
+
+#index .excerpt .read-more {
+  font-weight: bold;
+  -webkit-transition: 150ms;
+  -moz-transition: 150ms;
+  transition: 150ms;
+}
+
+#index .excerpt .read-more:hover {
+  color: orangered;
+}
+
+#index .excerpt .list-stories-link {
+  text-align: center;
+}
+
+#index .excerpt .list-stories-link a > p {
+  -webkit-transition: 150ms;
+  -moz-transition: 150ms;
+  transition: 150ms;
+  font-size: 1.5625em;
+}
+
+#index .excerpt .list-stories-link a > p:hover {
+  color: orangered;
 }
 
 #post .post-header {
